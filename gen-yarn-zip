@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+
+rm -rf ~/pkg
+mkdir -p ~/pkg
+
+yarn config set yarn-offline-mirror ~/pkg
+yarn config set yarn-offline-mirror-pruning false
+yarn cache clean
+yarn install
+cp yarn.lock ~/pkg
+cd ~/pkg
+zip -r $1.yarn.lock.zip *
