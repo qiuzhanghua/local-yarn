@@ -6,7 +6,7 @@
   "repository": "git@github.com:qiuzhanghua/local-yarn.git",
   "author": "qiuzhanghua <qiuzhanghua@icloud.com>",
   "license": "MIT",
-  "publishConfig": {
-    "@qiuzhanghua:registry": "https://npm.pkg.github.com"
+  "bin": {
+    "local-yarn": "./bin/local-yarn"
   }
 }
