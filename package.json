@@ -1,6 +1,6 @@
 {
   "name": "@qiuzhanghua/local-yarn",
-  "version": "0.3.0",
+  "version": "0.4.0",
   "description": "Process yarn.lock",
   "main": "index.js",
   "repository": "git@github.com:qiuzhanghua/local-yarn.git",
@@ -10,6 +10,7 @@
     "local-yarn": "./bin/local-yarn"
   },
   "dependencies": {
-    "@yarnpkg/lockfile": "^1.1.0"
+    "@yarnpkg/lockfile": "^1.1.0",
+    "arg": "^5.0.1"
   }
 }
