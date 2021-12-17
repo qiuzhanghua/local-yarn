@@ -10,7 +10,7 @@ on your unix machine, under nodejs project home, run
 
 ## Setup
 ```bash
-yarn global add https://github.com/qiuzhanghua/local-yarn.git#0.6.5
+yarn global add https://github.com/qiuzhanghua/local-yarn.git#0.6.6
 ```
 
 ## 以下是所有开发者的工作
