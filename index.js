@@ -1,7 +1,5 @@
 'use strict'
 
-const VERSION = '0.5.0'
-
 const arg = require('arg')
 const os = require('os')
 const path = require('path')
@@ -9,6 +7,10 @@ const adm_zip = require('adm-zip')
 const fs = require('fs')
 const lockfile = require('@yarnpkg/lockfile')
 const mkdirp = require('mkdirp')
+const prompt = require('prompt')
+const package_json = require('./package.json');
+
+const VERSION = package_json.version
 
 let local_yarn_repository = (process.env.TDP_HOME || os.homedir() + path.sep + 'tdp') + path.sep + 'yarn_repository'
 
@@ -37,6 +39,36 @@ if (args['--help']) {
         merge(local_yarn_repository + path.sep + 'all.lock', local_yarn_repository + path.sep + 'yarn.lock')
         fs.rmSync(local_yarn_repository + path.sep + 'yarn.lock')
     }
+} else if (args._[0] === 'clean') {
+   let  s = 'Are you sure to clean your local yarn repository?(y/n)'
+    prompt.start()
+    prompt.get(['Are you sure to clean your local yarn repository?(y/n)'], function (err, result) {
+        if (err) {
+            console.error(err)
+        }
+        if (result[s] === 'y') {
+            fs.rm(local_yarn_repository, {recursive: true}, (error) => {
+                if (error) {
+                    console.log(error);
+                }
+            })
+        }
+    });
+} else if (args._[0] === 'ls') {
+    let obj = {}
+    let f1 = local_yarn_repository + path.sep + 'all.lock'
+    if (fs.existsSync(f1)) {
+        let file = fs.readFileSync(f1, 'utf8')
+        let json = lockfile.parse(file)
+        if (json.type !== 'success') {
+            return false
+        }
+        obj = json.object
+        Object.keys(obj).forEach(function (value) {
+            console.log(value)
+        })
+    }
+
 }
 
 function merge(f1, f2) {
