@@ -9,5 +9,6 @@ yarn config set yarn-offline-mirror ~/pkg
 yarn cache clean
 yarn install
 cp yarn.lock ~/pkg
-cd ~/pkg
-zip -r $1.yarn.lock.zip *
+#cd ~/pkg
+#zip -r $1.yarn.lock.zip *
+jar cvfM test.yarn.lock.zip -C ~/pkg .
