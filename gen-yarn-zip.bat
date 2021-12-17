@@ -7,4 +7,4 @@ call yarn config set yarn-offline-mirror %USERPROFILE%\pkg
 call yarn cache clean
 call yarn install
 copy yarn.lock %USERPROFILE%\pkg
-jar cvfM test.yarn.lock.zip -C %USERPROFILE%\pkg .
+jar cvfM %1.yarn.lock.zip -C %USERPROFILE%\pkg .
