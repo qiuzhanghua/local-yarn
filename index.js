@@ -47,7 +47,7 @@ if (args['--help']) {
         let unzip = new adm_zip(filename, {})
         unzip.extractAllTo(local_yarn_repository, true, true, "")
         merge(local_yarn_repository + path.sep + 'all.lock', local_yarn_repository + path.sep + 'yarn.lock')
-        fs.rmSync(local_yarn_repository + path.sep + 'yarn.lock')
+        fs.unlinkSync(local_yarn_repository + path.sep + 'yarn.lock')
     }
 } else if (args._[0] === 'clean') {
    let  s = 'Are you sure to clean your local yarn repository?(y/n)'
