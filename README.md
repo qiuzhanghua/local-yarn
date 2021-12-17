@@ -10,7 +10,7 @@ on your unix machine, under nodejs home, run
 
 ## Setup
 ```bash
-yarn global add https://github.com/qiuzhanghua/local-yarn.git#0.5.0
+yarn global add https://github.com/qiuzhanghua/local-yarn.git#0.6.1
 ```
 
 ## Install Zip
