@@ -27,10 +27,20 @@ const args = arg({
 
 if (args['--help']) {
     console.log('local yarn repository tool, v' + VERSION)
+    console.log('')
+    console.log('local-yarn ls')
+    console.log('      to see which npm packages installed.')
+    console.log('local-yarn get meta')
+    console.log('      to update yarn.lock.')
 } else if (args['--version']) {
     console.log('version ' + VERSION)
 } else if (args._[0] === 'get' && args._[1] === 'meta') {
-    merge('yarn.lock', local_yarn_repository + path.sep + 'all.lock')
+    if (merge('yarn.lock', local_yarn_repository + path.sep + 'all.lock')) {
+        console.log('yarn.lock in this folder ready!')
+        console.log('run: ')
+        console.log('      yarn install --offline')
+        console.log('to update node_modules.')
+    }
 } else if (args._[0] === 'install') {
     let filename = args._[1]
     if (filename.endsWith('.yarn.lock.zip')) {
