@@ -3,7 +3,7 @@ process yarn.lock
 
 
 ## Zip
-on your unix machine, under nodejs home, run
+on your unix machine, under nodejs project home, run
 ```bash
 ./gen-yarn-zip <name>
 ```
