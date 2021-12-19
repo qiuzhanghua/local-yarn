@@ -1,6 +1,6 @@
 {
   "name": "@qiuzhanghua/local-yarn",
-  "version": "0.6.6",
+  "version": "0.6.7",
   "description": "Process yarn.lock",
   "main": "index.js",
   "repository": "git@github.com:qiuzhanghua/local-yarn.git",
