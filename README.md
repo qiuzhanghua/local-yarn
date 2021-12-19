@@ -5,7 +5,7 @@ process yarn.lock
 ## Zip
 on your unix machine, under nodejs project home, run
 ```bash
-`yarn config get global-folder`/node_modules/@qiuzhanghua/bin/gen-yarn-zip <name>
+`yarn config get global-folder`/node_modules/@qiuzhanghua/local-yarn/gen-yarn-zip <name>
 ```
 
 ## Setup
